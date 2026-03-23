@@ -106,6 +106,21 @@ nav {
     border-radius: 8px;
 }
 
+.container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.container ul {
+    font-size: 1.2rem;
+    padding-left: 1.5rem;
+}
+
+.container ul li {
+    margin-bottom: 0.5rem;
+}
+
+
 h1, h2 {
     color: var(--primary-color);
 }
