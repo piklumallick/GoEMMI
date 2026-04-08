@@ -271,7 +271,6 @@ details[open] summary::after {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: auto;
 }
 
 .speaker-links a {
@@ -323,6 +322,7 @@ details[open] summary::after {
     font-size: 0.95rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     outline: none;
 }
 
