@@ -1,15 +1,23 @@
 // Active nav highlight
 document.addEventListener('DOMContentLoaded', () => {
-    const page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(link => {
+  // Get the current page filename (e.g., "index.html")
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  
+  // Select all navigation links
+  const navLinks = document.querySelectorAll('nav a');
+  
+  navLinks.forEach(link => {
+      // Remove existing active classes just in case
       link.classList.remove('active');
       link.removeAttribute('aria-current');
-      if (link.getAttribute('href') === page) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
+
+      // If the link's href matches the current page, highlight it
+      if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
       }
-    });
   });
+});
   
   // Countdown timers
   function updateCountdowns() {
