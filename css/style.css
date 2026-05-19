@@ -237,7 +237,7 @@ th { background: var(--navy); color: #fff; font-weight: 600; }
 tr:hover td { background: var(--green-pale); }
 
 /* ── FAQ ── */
-details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: var(--space-3); overflow: hidden; }
+details { background: rgba(255, 255, 255, 0); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: var(--space-3); overflow: hidden; }
 details[open] { border-color: var(--green); box-shadow: 0 4px 12px rgba(90,150,50,0.1); }
 summary { font-weight: 600; font-size: var(--text-base); padding: var(--space-4) var(--space-6); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--navy); }
 summary::-webkit-details-marker { display: none; }
