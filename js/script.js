@@ -84,3 +84,24 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdowns();
     setInterval(updateCountdowns, 1000);
   }
+
+  // schedule-page — Week 1 / Week 2 tab switcher
+(function () {
+  var tabs   = document.querySelectorAll('.week-tab');
+  var panels = document.querySelectorAll('.week-panel');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(function (p) { p.hidden = true; });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      var target = document.getElementById(tab.getAttribute('aria-controls'));
+      if (target) { target.hidden = false; }
+    });
+  });
+})();
