@@ -6,30 +6,44 @@
   <title>GoEMMI 2027 — Winter School</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Nunito:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
   <header>
-    <div class="header-inner">
-      <a href="index.html" class="header-logo-link" aria-label="GoEMMI 2027 home">
-        <img src="resources/logos/Logo02_white.png" alt="GoEMMI logo" class="header-logo-img" width="120" height="120" loading="eager">
-      </a>
-      <div class="header-text">
-        <h1>Göttingen Emergent Minds (GoEMMI)</h1>
-        <h2>Winter School on Learning and Computation in Brains and Machines</h2>
-        <p>Two (+ one) weeks of learning, coding, and networking &nbsp;·&nbsp; Göttingen, Germany &nbsp;·&nbsp; <strong><span class="highlight-date">Feb 15 – Mar 6, 2027</span></strong></p>
-      </div>
+    <img src="resources/logos/Logo02_Blk.png" alt="GoEMMI" class="header-logo-left" loading="eager">
+    <img src="resources/logos/Text_logo_Blk.png" alt="" class="header-logo-right" aria-hidden="true" loading="eager">
+    <div class="header-text">
+      <h1><span class="acronym">Go</span>ettingen <span class="acronym">Em</span>ergent <span class="acronym">Mi</span>nds</h1>
+      <h2>Winter School on Learning and Computation in Brains and Machines</h2>
+      <p>Two (+ one) weeks of learning, coding, and networking in Göttingen, Germany</p>
     </div>
-    <a href="https://events.gwdg.de/event/1440/registrations/1227/" target="_blank" rel="noopener noreferrer" class="header-apply-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Apply Now
-    </a>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
+  <!-- CALENDAR STRIP -->
+  <section class="calendar-strip" aria-label="Important dates">
+    <div class="calendar-strip-dates">
+      <span class="calendar-date-item">
+        <span class="calendar-date-label">Winter School</span>
+        <span class="calendar-date-val">Feb 15 – Mar 6, 2027</span>
+      </span>
+      <span class="calendar-strip-sep">·</span>
+      <span class="calendar-date-item">
+        <span class="calendar-date-label">Registration open until</span>
+        <span class="calendar-date-val">Sep 1, 2026</span>
+      </span>
+    </div>
+    <a href="https://events.gwdg.de/event/1440/registrations/1227/" target="_blank" rel="noopener noreferrer" class="calendar-strip-apply-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Apply Now
+    </a>
+  </section>
+
+  
+
+<nav>
+    <a href="index.html">About</a>
     <a href="speakers.html">Speakers</a>
     <a href="schedule.html"aria-current="page">Schedule</a>
     <a href="organizers.html">Organizers</a>
@@ -38,20 +52,11 @@
 
   <main id="main">
     <div class="container schedule-container">
-      <h1>Program Schedule</h1>
+
       <p class="schedule-intro">
         The full two-week program runs <strong>February 14 &ndash; February 27, 2027</strong> in Göttingen, Germany.
         Lectures, tutorials, and hackathon sessions are held Monday–Friday each week, with group activities on weekends.
       </p>
-
-      <!-- LEGEND -->
-      <div class="schedule-legend" aria-label="Schedule legend">
-        <span class="legend-item legend-lecture">Lecture</span>
-        <span class="legend-item legend-tutorial">Tutorial</span>
-        <span class="legend-item legend-hackathon">Hackathon</span>
-        <span class="legend-item legend-social">Social / Meals</span>
-        <span class="legend-item legend-special">Special Session</span>
-      </div>
 
       <!-- WEEK TABS -->
       <div class="week-tabs" role="tablist" aria-label="Select week">
@@ -67,7 +72,16 @@
 
       <!-- ===== WEEK 1 ===== -->
       <section id="week1-panel" role="tabpanel" aria-labelledby="tab-week1" class="week-panel active">
-        <h2 class="week-heading">Week 1 &mdash; Theory of Emergence and Computation</h2>
+        <h2 class="week-heading">Theory of Emergence and Computation</h2>
+
+        <!-- LEGEND -->
+        <div class="schedule-legend" aria-label="Schedule legend">
+          <span class="legend-item legend-lecture">Lecture</span>
+          <span class="legend-item legend-tutorial">Tutorial</span>
+          <span class="legend-item legend-hackathon">Hackathon</span>
+          <span class="legend-item legend-social">Social / Meals</span>
+          <span class="legend-item legend-special">Special Session</span>
+        </div>
 
         <!-- MOBILE CARDS -->
         <div class="schedule-mobile" aria-label="Week 1 mobile schedule">
@@ -266,7 +280,16 @@
 
       <!-- ===== WEEK 2 ===== -->
       <section id="week2-panel" role="tabpanel" aria-labelledby="tab-week2" class="week-panel" hidden>
-        <h2 class="week-heading">Week 2 &mdash; Learning in Brains &amp; Machines / Computations from Local Interactions</h2>
+        <h2 class="week-heading">Learning in Brains &amp; Machines / Computations from Local Interactions</h2>
+
+        <!-- LEGEND -->
+        <div class="schedule-legend" aria-label="Schedule legend">
+          <span class="legend-item legend-lecture">Lecture</span>
+          <span class="legend-item legend-tutorial">Tutorial</span>
+          <span class="legend-item legend-hackathon">Hackathon</span>
+          <span class="legend-item legend-social">Social / Meals</span>
+          <span class="legend-item legend-special">Special Session</span>
+        </div>
 
         <!-- MOBILE CARDS -->
         <div class="schedule-mobile" aria-label="Week 2 mobile schedule">
@@ -427,9 +450,7 @@
     © 2026 GoEMMI Winter School Organizing Committee &nbsp;·&nbsp;
     <a href="mailto:goemmi@ds.mpg.de">goemmi@ds.mpg.de</a>
   </footer>
-
-  <img src="resources/logos/Goose_Logo_Red.png" alt="" class="page-goose-watermark" aria-hidden="true" width="420" loading="lazy">
-  <img src="resources/logos/Text_logo_Blk.png" alt="" class="page-goemmi-watermark" aria-hidden="true" loading="lazy">
+  <img src="resources/logos/Goose_Logo_Red.png" alt="" class="page-goose-bg" aria-hidden="true" loading="lazy">
 
   <script src="js/script.js"></script>
 </body>

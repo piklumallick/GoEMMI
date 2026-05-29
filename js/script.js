@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         appBox.querySelector('.countdown-digits').innerHTML = '<span style="color:rgba(255,255,255,0.4);font-size:var(--text-sm)">Deadline passed</span>';
         const s = appBox.querySelector('.countdown-status');
-        if (s) { const d = Math.floor((now - appDeadline)/86400000); s.textContent = d === 0 ? 'Applications closed today.' : `Applications closed ${d} day${d>1?'s':''} ago.`; s.style.color='#ff8a65'; }
+        if (s) { const d = Math.floor((now - appDeadline)/86400000); s.textContent = d === 0 ? 'Applications closed today.' : `Applications closed ${d} day${d>1?'s':''} ago.`; s.style.color='#ED2024'; }
       }
     }
   
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (status) { status.textContent = '🎉 GoEMMI 2027 is happening right now!'; status.style.color='#a2c67b'; }
       } else {
         if (digits) digits.innerHTML = '<span style="color:rgba(255,255,255,0.4);font-size:var(--text-sm)">Event concluded</span>';
-        if (status) { const d = Math.floor((now - eventEnd)/86400000); status.textContent = `GoEMMI 2027 ended ${d} day${d!==1?'s':''} ago.`; status.style.color='#ff8a65'; }
+        if (status) { const d = Math.floor((now - eventEnd)/86400000); status.textContent = `GoEMMI 2027 ended ${d} day${d!==1?'s':''} ago.`; status.style.color='#ED2024'; }
       }
     }
   }
