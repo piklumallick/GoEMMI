@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (diff > 0) {
         renderDigits(appBox, diff);
         const s = appBox.querySelector('.countdown-status');
-        if (s) s.textContent = 'Applications open — apply now!';
+        if (s) s.innerHTML = 'Applications open — <a href="https://events.gwdg.de/event/1440/registrations/1227/" target="_blank" rel="noopener noreferrer">apply now!</a>';
       } else {
         appBox.querySelector('.countdown-digits').innerHTML = '<span style="color:rgba(255,255,255,0.4);font-size:var(--text-sm)">Deadline passed</span>';
         const s = appBox.querySelector('.countdown-status');
@@ -104,4 +104,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (target) { target.hidden = false; }
     });
   });
+})();
+
+// Speaker bio modal
+(function () {
+  const modal = document.getElementById('bio-modal');
+  if (!modal) return;
+  const content = modal.querySelector('.bio-modal-content');
+  const closeBtn = modal.querySelector('.bio-modal-close');
+
+  document.querySelectorAll('.speaker-about-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const bioDiv = btn.closest('.speaker-content').querySelector('.speaker-bio-content');
+      if (bioDiv) content.innerHTML = bioDiv.innerHTML;
+      modal.removeAttribute('hidden');
+    });
+  });
+
+  closeBtn.addEventListener('click', function () { modal.setAttribute('hidden', ''); });
+  modal.addEventListener('click', function (e) { if (e.target === modal) modal.setAttribute('hidden', ''); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') modal.setAttribute('hidden', ''); });
 })();
