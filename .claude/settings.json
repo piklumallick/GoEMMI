@@ -26,7 +26,11 @@
       "Bash(git commit -m ' *)",
       "WebFetch(domain:compneurobio.org)",
       "Bash(sed -i 's|<html lang=\"de\">|<html lang=\"en\">|' /home/dburr/projects/GoEMMI/impressum.html)",
-      "Bash(sed -i 's|<title>Impressum — GoEMMI 2027</title>|<title>Legal Notice — GoEMMI 2027</title>|' /home/dburr/projects/GoEMMI/impressum.html)"
+      "Bash(sed -i 's|<title>Impressum — GoEMMI 2027</title>|<title>Legal Notice — GoEMMI 2027</title>|' /home/dburr/projects/GoEMMI/impressum.html)",
+      "Bash(git -C /home/dburr/projects/GoEMMI branch -a)",
+      "Bash(git -C /home/dburr/projects/GoEMMI remote -v)",
+      "Bash(git -C /home/dburr/projects/GoEMMI log --oneline -5)",
+      "Bash(git -C /home/dburr/projects/GoEMMI status)"
     ],
     "additionalDirectories": [
       "/home/dburr/projects/GoEMMI"
