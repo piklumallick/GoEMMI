@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Countdown timers
   function updateCountdowns() {
     const now = new Date();
-    const appDeadline = new Date('2026-09-01T23:59:59');
+    const appDeadline = new Date('2026-10-01T23:59:59');
     const eventStart  = new Date('2027-02-15T09:00:00');
     const eventEnd    = new Date('2027-03-06T18:00:00');
   
