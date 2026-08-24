@@ -1,24 +1,64 @@
-// Active nav highlight
+// Nav: smooth in-page scrolling + scroll-spy section highlighting
 document.addEventListener('DOMContentLoaded', () => {
-  // Get the current page filename (e.g., "index.html")
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  
-  // Select all navigation links
-  const navLinks = document.querySelectorAll('nav a');
-  
-  navLinks.forEach(link => {
-      // Remove existing active classes just in case
-      link.classList.remove('active');
-      link.removeAttribute('aria-current');
+  const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+  if (!navLinks.length) return;
 
-      // If the link's href matches the current page, highlight it
-      if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
-          link.setAttribute('aria-current', 'page');
-      }
+  const sections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActive(id) {
+    navLinks.forEach(link => {
+      const on = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('active', on);
+      if (on) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  // Click: smooth-scroll to the section and update the URL hash
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', link.getAttribute('href'));
+      setActive(target.id);
+    });
   });
+
+  // Scroll-spy: highlight whichever section currently sits under the nav bar
+  function onScroll() {
+    const navH = document.querySelector('nav').offsetHeight;
+    const line = navH + 8;
+    let current = sections[0];
+    sections.forEach(sec => {
+      if (sec.getBoundingClientRect().top <= line) current = sec;
+    });
+    // At the very bottom of the page, always highlight the last section
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+      current = sections[sections.length - 1];
+    }
+    if (current) setActive(current.id);
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { onScroll(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  // Honour a #hash in the URL on load, then set the initial highlight
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) setTimeout(() => target.scrollIntoView({ block: 'start' }), 0);
+  }
+  onScroll();
 });
-  
+
   // Countdown timers
   function updateCountdowns() {
     const now = new Date();

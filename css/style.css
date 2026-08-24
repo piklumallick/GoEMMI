@@ -181,8 +181,34 @@ nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-
 nav a::after { content: ""; display: block; height: 2px; width: 0%; background: var(--green); position: absolute; left: 0; bottom: -4px; transition: width 0.22s cubic-bezier(.12,.74,.58,1.03); border-radius: 2px; }
 nav a:hover, nav a:focus { color: var(--navy); outline: none; }
 nav a:hover::after, nav a:focus::after { width: 100%; }
-nav a.active, nav a[aria-current="page"] { color: var(--green); font-weight: 700; font-size: var(--text-lg); }
-nav a.active::after, nav a[aria-current="page"]::after { width: 0; }
+nav a.active, nav a[aria-current="page"] { color: var(--green); font-weight: 700; }
+nav a.active::after, nav a[aria-current="page"]::after { width: 100%; }
+
+/* ── ONE-PAGE SECTIONS ── */
+.page-section {
+  /* keep the sticky nav from covering a section heading when scrolled to */
+  scroll-margin-top: 4rem;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-10);
+}
+.page-section + .page-section { border-top: 1px solid rgba(35, 31, 32, 0.12); }
+.section-title {
+  font-family: 'Comfortaa', 'Nunito', sans-serif;
+  color: var(--navy);
+  font-size: var(--text-2xl);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-6);
+  text-align: center;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.6rem auto 0;
+  background: var(--green);
+  border-radius: 2px;
+}
 
 /* ── COUNTDOWN HERO BAND ── */
 .hero-band {
