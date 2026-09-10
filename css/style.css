@@ -297,7 +297,7 @@ nav a.active::after, nav a[aria-current="page"]::after { width: 100%; }
   background: var(--green);
   color: #fff !important;
   text-decoration: none;
-  padding: 0.6rem 1.4rem;
+  padding: 0.5rem 1.4rem;
   border-radius: 9999px;
   font-weight: 600;
   font-size: var(--text-sm);
@@ -305,6 +305,19 @@ nav a.active::after, nav a[aria-current="page"]::after { width: 100%; }
   flex-shrink: 0;
   transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
   box-shadow: 0 2px 8px rgba(224, 27, 36, 0.4);
+}
+.calendar-strip-apply-btn .apply-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+.calendar-strip-apply-btn .apply-btn-main { letter-spacing: 0.04em; }
+.calendar-strip-apply-btn .apply-btn-sub {
+  font-size: 0.8em;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.01em;
 }
 .calendar-strip-apply-btn:hover,
 .calendar-strip-apply-btn:focus { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(224, 27, 36, 0.4); }

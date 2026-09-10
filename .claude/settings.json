@@ -30,7 +30,9 @@
       "Bash(git -C /home/dburr/projects/GoEMMI branch -a)",
       "Bash(git -C /home/dburr/projects/GoEMMI remote -v)",
       "Bash(git -C /home/dburr/projects/GoEMMI log --oneline -5)",
-      "Bash(git -C /home/dburr/projects/GoEMMI status)"
+      "Bash(git -C /home/dburr/projects/GoEMMI status)",
+      "Skill(run)",
+      "Skill(run:*)"
     ],
     "additionalDirectories": [
       "/home/dburr/projects/GoEMMI"
