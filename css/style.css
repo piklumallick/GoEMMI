@@ -184,6 +184,33 @@ nav a:hover::after, nav a:focus::after { width: 100%; }
 nav a.active, nav a[aria-current="page"] { color: var(--green); font-weight: 700; }
 nav a.active::after, nav a[aria-current="page"]::after { width: 100%; }
 
+/* ── PARTNER / HOST LOGOS ── */
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* Gap shrinks with the viewport so the pair still fits on a narrow phone */
+  gap: clamp(0.75rem, 0.3rem + 2.2vw, 2rem);
+  padding: var(--space-6) var(--space-4) var(--space-2);
+}
+/*
+  Both logos are wide wordmarks with different aspect ratios (uni-goe 5.6:1,
+  MPI-DS 8.3:1), so they are matched on HEIGHT — sizing by width would render
+  the Göttingen lettering much larger than the MPI lettering. One fluid height
+  drives both, scaling continuously with the viewport instead of stepping at a
+  breakpoint. Combined they are ~14x as wide as they are tall, so the ceiling
+  keeps the row inside the 945px content column.
+*/
+.partner-logos img {
+  height: clamp(1.2rem, 0.6rem + 2.8vw, 3.4rem);
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+.partner-logos a { display: inline-flex; max-width: 100%; transition: opacity 0.18s ease; }
+.partner-logos a:hover, .partner-logos a:focus { opacity: 0.7; }
+
 /* ── ONE-PAGE SECTIONS ── */
 .page-section {
   /* keep the sticky nav from covering a section heading when scrolled to */
@@ -192,6 +219,8 @@ nav a.active::after, nav a[aria-current="page"]::after { width: 100%; }
   padding-bottom: var(--space-10);
 }
 .page-section + .page-section { border-top: 1px solid rgba(35, 31, 32, 0.12); }
+/* About opens right under the logo row, so it needs less breathing room on top */
+#about.page-section { padding-top: var(--space-2); }
 .section-title {
   font-family: 'Comfortaa', 'Nunito', sans-serif;
   color: var(--navy);
@@ -426,7 +455,6 @@ details[open] summary::after { content: "−"; }
 .speaker-photo { width: 100%; aspect-ratio: 1/1; object-fit: cover; background: var(--surface-2); border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
 .speaker-content { padding: var(--space-4) var(--space-4) var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); flex-grow: 1; text-align: center; }
 .speaker-content h2 { font-size: var(--text-base); color: var(--navy); margin: 0; }
-[aria-label="Conference speakers"] .speaker-content h2 { color: var(--green); }
 .speaker-role { font-size: var(--text-xs); font-weight: 600; color: var(--text-muted); }
 .speaker-topic { font-size: var(--text-xs); color: var(--text-faint); }
 .speaker-links { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-3); margin-top: auto; justify-content: center; }
