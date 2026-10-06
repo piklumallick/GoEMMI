@@ -62,24 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Countdown timers
   function updateCountdowns() {
     const now = new Date();
-    const appDeadline = new Date('2026-10-01T23:59:59');
     const eventStart  = new Date('2027-02-15T09:00:00');
     const eventEnd    = new Date('2027-03-06T18:00:00');
-  
-    // Application deadline
-    const appBox = document.getElementById('countdown-apply');
-    if (appBox) {
-      const diff = appDeadline - now;
-      if (diff > 0) {
-        renderDigits(appBox, diff);
-        const s = appBox.querySelector('.countdown-status');
-        if (s) s.innerHTML = 'Applications open — <a href="https://events.gwdg.de/event/1440/registrations/1227/" target="_blank" rel="noopener noreferrer">apply now!</a>';
-      } else {
-        appBox.querySelector('.countdown-digits').innerHTML = '<span style="color:rgba(255,255,255,0.4);font-size:var(--text-sm)">Deadline passed</span>';
-        const s = appBox.querySelector('.countdown-status');
-        if (s) { const d = Math.floor((now - appDeadline)/86400000); s.textContent = d === 0 ? 'Applications closed today.' : `Applications closed ${d} day${d>1?'s':''} ago.`; s.style.color='#ED2024'; }
-      }
-    }
   
     // Event countdown
     const eventBox = document.getElementById('countdown-event');
@@ -120,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="countdown-unit"><span class="countdown-num">${pad(seconds)}</span><span class="countdown-label">Sec</span></div>`;
   }
   
-  if (document.getElementById('countdown-apply') || document.getElementById('countdown-event')) {
+  if (document.getElementById('countdown-event')) {
     updateCountdowns();
     setInterval(updateCountdowns, 1000);
   }
