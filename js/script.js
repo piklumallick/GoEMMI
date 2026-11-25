@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCountdowns, 1000);
   }
 
-  // schedule-page — Week 1 / Week 2 tab switcher
+  // Schedule section — week tab switcher
 (function () {
   var tabs   = document.querySelectorAll('.week-tab');
   var panels = document.querySelectorAll('.week-panel');
